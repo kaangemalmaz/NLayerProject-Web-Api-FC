@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UdemyNLayerProject.Business\UdemyNLayerProject.Business.csproj" />
+    <ProjectReference Include="..\UdemyNLayerProject.DataAccess\UdemyNLayerProject.DataAccess.csproj" />
+    <ProjectReference Include="..\UdemyNLayerProject.Entity\UdemyNLayerProject.Entity.csproj" />
+  </ItemGroup>
+
+
+</Project>

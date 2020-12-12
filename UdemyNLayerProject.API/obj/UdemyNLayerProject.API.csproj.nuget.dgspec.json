@@ -1,0 +1,240 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.API\\UdemyNLayerProject.API.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.API\\UdemyNLayerProject.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.API\\UdemyNLayerProject.API.csproj",
+        "projectName": "UdemyNLayerProject.API",
+        "projectPath": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.API\\UdemyNLayerProject.API.csproj",
+        "packagesPath": "C:\\Users\\KLharomin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KLharomin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.Business\\UdemyNLayerProject.Business.csproj": {
+                "projectPath": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.Business\\UdemyNLayerProject.Business.csproj"
+              },
+              "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.DataAccess\\UdemyNLayerProject.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.DataAccess\\UdemyNLayerProject.DataAccess.csproj"
+              },
+              "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.Entity\\UdemyNLayerProject.Entity.csproj": {
+                "projectPath": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.Entity\\UdemyNLayerProject.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.Business\\UdemyNLayerProject.Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.Business\\UdemyNLayerProject.Business.csproj",
+        "projectName": "UdemyNLayerProject.Business",
+        "projectPath": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.Business\\UdemyNLayerProject.Business.csproj",
+        "packagesPath": "C:\\Users\\KLharomin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.Business\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KLharomin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.DataAccess\\UdemyNLayerProject.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.DataAccess\\UdemyNLayerProject.DataAccess.csproj"
+              },
+              "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.Entity\\UdemyNLayerProject.Entity.csproj": {
+                "projectPath": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.Entity\\UdemyNLayerProject.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.DataAccess\\UdemyNLayerProject.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.DataAccess\\UdemyNLayerProject.DataAccess.csproj",
+        "projectName": "UdemyNLayerProject.DataAccess",
+        "projectPath": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.DataAccess\\UdemyNLayerProject.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\KLharomin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KLharomin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.Entity\\UdemyNLayerProject.Entity.csproj": {
+                "projectPath": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.Entity\\UdemyNLayerProject.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.Entity\\UdemyNLayerProject.Entity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.Entity\\UdemyNLayerProject.Entity.csproj",
+        "projectName": "UdemyNLayerProject.Entity",
+        "projectPath": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.Entity\\UdemyNLayerProject.Entity.csproj",
+        "packagesPath": "C:\\Users\\KLharomin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.Entity\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KLharomin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
