@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\UdemyNLayerProject.Business\UdemyNLayerProject.Business.csproj" />
     <ProjectReference Include="..\UdemyNLayerProject.DataAccess\UdemyNLayerProject.DataAccess.csproj" />
     <ProjectReference Include="..\UdemyNLayerProject.Entity\UdemyNLayerProject.Entity.csproj" />

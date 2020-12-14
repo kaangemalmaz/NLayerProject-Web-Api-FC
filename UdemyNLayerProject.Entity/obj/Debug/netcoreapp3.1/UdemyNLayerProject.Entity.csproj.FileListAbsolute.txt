@@ -1,6 +1,7 @@
 C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Entity\bin\Debug\netcoreapp3.1\UdemyNLayerProject.Entity.deps.json
 C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Entity\bin\Debug\netcoreapp3.1\UdemyNLayerProject.Entity.dll
 C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Entity\bin\Debug\netcoreapp3.1\UdemyNLayerProject.Entity.pdb
+C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Entity\obj\Debug\netcoreapp3.1\UdemyNLayerProject.Entity.csprojAssemblyReference.cache
 C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Entity\obj\Debug\netcoreapp3.1\UdemyNLayerProject.Entity.AssemblyInfoInputs.cache
 C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Entity\obj\Debug\netcoreapp3.1\UdemyNLayerProject.Entity.AssemblyInfo.cs
 C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Entity\obj\Debug\netcoreapp3.1\UdemyNLayerProject.Entity.csproj.CoreCompileInputs.cache
