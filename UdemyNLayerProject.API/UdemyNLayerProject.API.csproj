@@ -5,16 +5,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\UdemyNLayerProject.Business\UdemyNLayerProject.Business.csproj" />
-    <ProjectReference Include="..\UdemyNLayerProject.DataAccess\UdemyNLayerProject.DataAccess.csproj" />
-    <ProjectReference Include="..\UdemyNLayerProject.Entity\UdemyNLayerProject.Entity.csproj" />
   </ItemGroup>
 
 

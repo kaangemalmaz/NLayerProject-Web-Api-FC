@@ -10,11 +10,11 @@ namespace UdemyNLayerProject.Entity.Services
     {
         Task<TEntity> GetByIdAsync(int id);
         Task<IEnumerable<TEntity>> GetAllAsync();
-        Task<IEnumerable<TEntity>> FindAsync(Expression<Func<TEntity, bool>> expression);
+        Task<IEnumerable<TEntity>> WhereAsync(Expression<Func<TEntity, bool>> expression);
         Task<TEntity> SingleOrDefaultAsync(Expression<Func<TEntity, bool>> expression);
 
-        Task AddAsync(TEntity entity);
-        Task AddRangeAsync(IEnumerable<TEntity> entities);
+        Task<TEntity> AddAsync(TEntity entity);
+        Task<IEnumerable<TEntity>> AddRangeAsync(IEnumerable<TEntity> entities);
         void Remove(TEntity entity);
         void RemoveRange(IEnumerable<TEntity> entities);
 

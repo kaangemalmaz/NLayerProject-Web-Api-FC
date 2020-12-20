@@ -10,7 +10,7 @@ namespace UdemyNLayerProject.Entity.Repository
     {
         Task<TEntity> GetByIdAsync(int id);
         Task<IEnumerable<TEntity>> GetAllAsync();
-        IEnumerable<TEntity> Where(Expression<Func<TEntity,bool>> expression);
+        Task<IEnumerable<TEntity>> WhereAsync(Expression<Func<TEntity,bool>> expression);
         Task<TEntity> SingleOrDefaultAsync(Expression<Func<TEntity, bool>> expression);
 
         Task AddAsync(TEntity entity);

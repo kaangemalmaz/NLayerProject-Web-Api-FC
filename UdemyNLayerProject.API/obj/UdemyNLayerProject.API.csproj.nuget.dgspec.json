@@ -29,12 +29,6 @@
             "projectReferences": {
               "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.Business\\UdemyNLayerProject.Business.csproj": {
                 "projectPath": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.Business\\UdemyNLayerProject.Business.csproj"
-              },
-              "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.DataAccess\\UdemyNLayerProject.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.DataAccess\\UdemyNLayerProject.DataAccess.csproj"
-              },
-              "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.Entity\\UdemyNLayerProject.Entity.csproj": {
-                "projectPath": "C:\\Users\\KLharomin\\source\\repos\\UdemyNLayerProject\\UdemyNLayerProject.Entity\\UdemyNLayerProject.Entity.csproj"
               }
             }
           }
@@ -48,11 +42,33 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.4, )"
             }
           },
           "imports": [
