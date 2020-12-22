@@ -16,6 +16,11 @@ namespace UdemyNLayerProject.Business.Services
         {
         }
 
+        public async Task<IEnumerable<Product>> GetWithCategory()
+        {
+            return await _unitOfWork.Product.GetWithCategory();
+        }
+
         public async Task<Product> GetWithCategoryByIdAsync(int productId)
         {
             return await _unitOfWork.Product.GetWithCategoryByIdAsync(productId);

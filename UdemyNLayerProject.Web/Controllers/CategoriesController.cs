@@ -10,6 +10,7 @@ using UdemyNLayerProject.DataAccess;
 using UdemyNLayerProject.Entity.Models;
 using UdemyNLayerProject.Entity.Services;
 using UdemyNLayerProject.Web.DTOs;
+using UdemyNLayerProject.Web.Filters;
 
 namespace UdemyNLayerProject.Web.Controllers
 {
@@ -53,6 +54,7 @@ namespace UdemyNLayerProject.Web.Controllers
         }
 
         // GET: Categories/Edit/5
+        [ServiceFilter(typeof(NotFoundFilter))]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -72,6 +74,7 @@ namespace UdemyNLayerProject.Web.Controllers
         // POST: Categories/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [ServiceFilter(typeof(NotFoundFilter))]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, CategoryDto categoryDto)
@@ -90,7 +93,7 @@ namespace UdemyNLayerProject.Web.Controllers
             return View(categoryDto);
         }
 
-
+        [ServiceFilter(typeof(NotFoundFilter))]
         // GET: Categories/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -109,6 +112,7 @@ namespace UdemyNLayerProject.Web.Controllers
         }
 
         // POST: Categories/Delete/5
+        [ServiceFilter(typeof(NotFoundFilter))]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

@@ -18,9 +18,16 @@ namespace UdemyNLayerProject.DataAccess.Repositories
             this.context = context;
         }
 
+        public async Task<IEnumerable<Product>> GetWithCategory()
+        {
+            return await context.Set<Product>().Include(i => i.Category).ToListAsync();
+        }
+
         public async Task<Product> GetWithCategoryByIdAsync(int productId)
         {
             return await context.Set<Product>().Include(i => i.Category).FirstOrDefaultAsync(i=>i.Id == productId);
         }
+
+        
     }
 }

@@ -9,5 +9,6 @@ namespace UdemyNLayerProject.Entity.Services
     public interface IProductService : IService<Product>
     {
         Task<Product> GetWithCategoryByIdAsync(int productId);
+        Task<IEnumerable<Product>> GetWithCategory();
     }
 }

@@ -182,3 +182,13 @@ C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Web\obj\De
 C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Web\obj\Debug\netcoreapp3.1\Razor\Views\Categories\Details.cshtml.g.cs
 C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Web\obj\Debug\netcoreapp3.1\Razor\Views\Categories\Edit.cshtml.g.cs
 C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Web\obj\Debug\netcoreapp3.1\Razor\Views\Categories\Index.cshtml.g.cs
+C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Web\obj\Debug\netcoreapp3.1\Razor\Views\Products\Create.cshtml.g.cs
+C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Web\obj\Debug\netcoreapp3.1\Razor\Views\Products\Delete.cshtml.g.cs
+C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Web\obj\Debug\netcoreapp3.1\Razor\Views\Products\Details.cshtml.g.cs
+C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Web\obj\Debug\netcoreapp3.1\Razor\Views\Products\Index.cshtml.g.cs
+C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Web\obj\Debug\netcoreapp3.1\Razor\Views\Products\Edit.cshtml.g.cs
+C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Web\obj\Debug\netcoreapp3.1\Razor\Views\Products1\Create.cshtml.g.cs
+C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Web\obj\Debug\netcoreapp3.1\Razor\Views\Products1\Delete.cshtml.g.cs
+C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Web\obj\Debug\netcoreapp3.1\Razor\Views\Products1\Details.cshtml.g.cs
+C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Web\obj\Debug\netcoreapp3.1\Razor\Views\Products1\Edit.cshtml.g.cs
+C:\Users\KLharomin\source\repos\UdemyNLayerProject\UdemyNLayerProject.Web\obj\Debug\netcoreapp3.1\Razor\Views\Products1\Index.cshtml.g.cs

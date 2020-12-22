@@ -9,5 +9,6 @@ namespace UdemyNLayerProject.Entity.Repository
     public interface IProductRepository : IRepository<Product>
     {
         Task<Product> GetWithCategoryByIdAsync(int productId);
+        Task<IEnumerable<Product>> GetWithCategory();
     }
 }

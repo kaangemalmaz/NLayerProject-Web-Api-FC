@@ -11,6 +11,9 @@ namespace UdemyNLayerProject.Web.DTOs
         public int Stock { get; set; }
         [Range(1,double.MaxValue,ErrorMessage = "{0} alanı 1 den büyük değer olmalıdır.")]
         public decimal Price { get; set; }
+        [Display(Name ="Kategori")]
         public int CategoryId { get; set; }
+
+        public CategoryDto Category { get; set; }
     }
 }
