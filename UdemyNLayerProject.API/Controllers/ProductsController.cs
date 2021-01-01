@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
-using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using UdemyNLayerProject.API.DTOs;
 using UdemyNLayerProject.API.Filters;
-using UdemyNLayerProject.DataAccess;
 using UdemyNLayerProject.Entity.Models;
 using UdemyNLayerProject.Entity.Services;
 
@@ -31,8 +26,8 @@ namespace UdemyNLayerProject.API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
-            var products =  await _productService.GetAllAsync();
-            return Ok(_mapper.Map<IEnumerable<ProductDto>>(products));
+            var products =  await _productService.GetWithCategory();
+            return Ok(_mapper.Map<IEnumerable<ProductWithCategoryDto>>(products));
         }
 
         // GET: api/Products/5
@@ -57,12 +52,21 @@ namespace UdemyNLayerProject.API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProduct(int id, ProductDto productDto)
         {
+            
             if (id != productDto.Id)
             {
                 return BadRequest();
             }
 
-            _productService.Update(_mapper.Map<Product>(productDto));
+            var product = _mapper.Map<Product>(await _productService.GetByIdAsync(id));
+            product.CategoryId = productDto.CategoryId;
+            product.Name = productDto.Name;
+            product.Price = productDto.Price;
+            product.Stock = productDto.Stock;
+            product.Id = productDto.Id;
+
+
+            _productService.Update(product);
 
             return NoContent();
         }

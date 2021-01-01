@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using UdemyNLayerProject.DataAccess;
-using UdemyNLayerProject.Entity.Models;
-using UdemyNLayerProject.Entity.Services;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using UdemyNLayerProject.Web.ApiService;
 using UdemyNLayerProject.Web.DTOs;
 using UdemyNLayerProject.Web.Filters;
 
@@ -16,20 +10,20 @@ namespace UdemyNLayerProject.Web.Controllers
 {
     public class CategoriesController : Controller
     {
-        private readonly ICategoryService _categoryService;
-        private readonly IMapper _mapper;
+        private readonly CategoryApiService _categoryApiService;
 
-        public CategoriesController(ICategoryService categoryService, IMapper mapper)
+
+        public CategoriesController(CategoryApiService categoryApiService)
         {
-            _categoryService = categoryService;
-            _mapper = mapper;
+            _categoryApiService = categoryApiService;
         }
 
         // GET: Categories
         public async Task<IActionResult> Index()
+        
         {
-            var categories = await _categoryService.GetAllAsync();
-            return View(_mapper.Map<IEnumerable<CategoryDto>>(categories));
+            var categories = await _categoryApiService.GetAllAsync();
+            return View(categories);
         }
 
         // GET: Categories/Create
@@ -47,7 +41,7 @@ namespace UdemyNLayerProject.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _categoryService.AddAsync(_mapper.Map<Category>(categoryDto));
+                await _categoryApiService.AddAsync(categoryDto);
                 return RedirectToAction(nameof(Index));
             }
             return View(categoryDto);
@@ -62,13 +56,13 @@ namespace UdemyNLayerProject.Web.Controllers
                 return NotFound();
             }
 
-            var category = await _categoryService.SingleOrDefaultAsync(i => i.Id == id);
+            var category = await _categoryApiService.GetById((int)id);
             if (category == null)
             {
                 return NotFound();
             }
 
-            return View(_mapper.Map<CategoryDto>(category));
+            return View(category);
         }
 
         // POST: Categories/Edit/5
@@ -77,7 +71,7 @@ namespace UdemyNLayerProject.Web.Controllers
         [ServiceFilter(typeof(NotFoundFilter))]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, CategoryDto categoryDto)
+        public async Task<IActionResult> Edit(int id, CategoryDto categoryDto)
         {
             if (id != categoryDto.Id)
             {
@@ -87,7 +81,7 @@ namespace UdemyNLayerProject.Web.Controllers
             if (ModelState.IsValid)
             {
 
-                _categoryService.Update(_mapper.Map<Category>(categoryDto));
+                await _categoryApiService.Update(id,categoryDto);
                 return RedirectToAction(nameof(Index));
             }
             return View(categoryDto);
@@ -102,13 +96,13 @@ namespace UdemyNLayerProject.Web.Controllers
                 return NotFound();
             }
 
-            var category = await _categoryService.SingleOrDefaultAsync(m => m.Id == id);
+            var category = await _categoryApiService.GetById((int)id);
             if (category == null)
             {
                 return NotFound();
             }
 
-            return View(_mapper.Map<CategoryDto>(category));
+            return View(category);
         }
 
         // POST: Categories/Delete/5
@@ -117,8 +111,7 @@ namespace UdemyNLayerProject.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var category = await _categoryService.SingleOrDefaultAsync(i=>i.Id == id);
-            _categoryService.Remove(category);
+            await _categoryApiService.Remove(id);
             return RedirectToAction(nameof(Index));
         }
     }

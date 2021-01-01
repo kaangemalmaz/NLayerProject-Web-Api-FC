@@ -18,6 +18,6 @@ namespace UdemyNLayerProject.Entity.Services
         void Remove(TEntity entity);
         void RemoveRange(IEnumerable<TEntity> entities);
 
-        TEntity Update(TEntity entity);
+        void Update(TEntity entity);
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace UdemyNLayerProject.Entity.Models
+﻿namespace UdemyNLayerProject.Entity.Models
 {
     public class Person
     {

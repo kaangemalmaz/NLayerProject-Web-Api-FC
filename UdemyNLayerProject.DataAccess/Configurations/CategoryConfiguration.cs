@@ -16,6 +16,8 @@ namespace UdemyNLayerProject.DataAccess.Configurations
 
             builder.Property(i => i.Name).IsRequired().HasMaxLength(200);
 
+            builder.HasMany(i => i.Products).WithOne(i => i.Category).HasForeignKey(i => i.CategoryId);
+
             builder.ToTable("Categories");
         }
     }

@@ -1,17 +1,13 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using UdemyNLayerProject.Business.Services;
-using UdemyNLayerProject.DataAccess;
-using UdemyNLayerProject.DataAccess.Repositories;
-using UdemyNLayerProject.DataAccess.UnitOfWorks;
-using UdemyNLayerProject.Entity.Repository;
-using UdemyNLayerProject.Entity.Services;
-using UdemyNLayerProject.Entity.UnitOfWorks;
+using System;
+using System.Net.Http;
+using System.Security.Authentication;
+using UdemyNLayerProject.Web.ApiService;
 using UdemyNLayerProject.Web.Filters;
 
 namespace UdemyNLayerProject.Web
@@ -28,21 +24,32 @@ namespace UdemyNLayerProject.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<NotFoundFilter>();
-            services.AddAutoMapper(typeof(Startup));
-            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-            services.AddScoped(typeof(IService<>), typeof(Service<>));
-
-            services.AddScoped<ICategoryService, CategoryService>();
-            services.AddScoped<IProductService, ProductService>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
-
-            services.AddDbContext<AppDbContext>(options =>
+            services.AddHttpClient<CategoryApiService>(opt =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("SqlConStr"), o => {
-                    o.MigrationsAssembly("UdemyNLayerProject.DataAccess");
-                });
+                opt.BaseAddress = new Uri(Configuration["baseUrl"]);
+            }).ConfigurePrimaryHttpMessageHandler(() =>
+            {
+                var handler = new HttpClientHandler();
+                handler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
+                handler.SslProtocols = SslProtocols.Tls12 | SslProtocols.Tls11 | SslProtocols.Tls;
+                return handler;
+
             });
+
+            services.AddHttpClient<ProductApiService>(opt =>
+            {
+                opt.BaseAddress = new Uri(Configuration["baseUrlProduct"]);
+            }).ConfigurePrimaryHttpMessageHandler(() =>
+            {
+                var handler = new HttpClientHandler();
+                handler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
+                handler.SslProtocols = SslProtocols.Tls12 | SslProtocols.Tls11 | SslProtocols.Tls;
+                return handler;
+
+            });
+
+            services.AddTransient<NotFoundFilter>();
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllersWithViews();
         }
 
@@ -56,14 +63,14 @@ namespace UdemyNLayerProject.Web
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

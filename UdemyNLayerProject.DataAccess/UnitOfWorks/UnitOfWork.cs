@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using UdemyNLayerProject.DataAccess.Repositories;
 using UdemyNLayerProject.Entity.Repository;
 using UdemyNLayerProject.Entity.UnitOfWorks;

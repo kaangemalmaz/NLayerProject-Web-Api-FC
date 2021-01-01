@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 using UdemyNLayerProject.Entity.Repository;
 using UdemyNLayerProject.Entity.Services;
@@ -61,11 +60,10 @@ namespace UdemyNLayerProject.Business.Services
             return await _repository.SingleOrDefaultAsync(expression);
         }
 
-        public TEntity Update(TEntity entity)
+        public void Update(TEntity entity)
         {
             _repository.Update(entity);
             _unitOfWork.Commit();
-            return entity;
         }
 
         public async Task<IEnumerable<TEntity>> WhereAsync(Expression<Func<TEntity, bool>> expression)

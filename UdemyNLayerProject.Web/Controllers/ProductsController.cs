@@ -1,42 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using UdemyNLayerProject.DataAccess;
-using UdemyNLayerProject.Entity.Models;
-using UdemyNLayerProject.Entity.Services;
+using System.Threading.Tasks;
+using UdemyNLayerProject.Web.ApiService;
 using UdemyNLayerProject.Web.DTOs;
 
 namespace UdemyNLayerProject.Web.Controllers
 {
     public class ProductsController : Controller
     {
-        private readonly IProductService _productService;
-        private readonly ICategoryService _categoryService;
-        private readonly IMapper _mapper;
+        private readonly ProductApiService _productApiService;
+        private readonly CategoryApiService _categoryApiService;
 
-        public ProductsController(IProductService productService, IMapper mapper, ICategoryService categoryService)
+        public ProductsController(ProductApiService productApiService, CategoryApiService categoryApiService)
         {
-            _productService = productService;
-            _mapper = mapper;
-            _categoryService = categoryService;
+            _productApiService = productApiService;
+            _categoryApiService = categoryApiService;
         }
 
         // GET: Products
         public async Task<IActionResult> Index()
         {
-            var products = await _productService.GetWithCategory();
-            return View(_mapper.Map<IEnumerable<ProductDto>>(products));
+            var products = await _productApiService.GetProducts();
+            return View(products);
         }
 
         // GET: Products/Create
         public async Task<IActionResult> Create()
         {
-            ViewData["CategoryId"] = new SelectList(_mapper.Map<IEnumerable<CategoryDto>>(await _categoryService.GetAllAsync()), "Id", "Name");
+            ViewData["CategoryId"] = new SelectList(await _categoryApiService.GetAllAsync(), "Id", "Name");
             return View();
         }
 
@@ -49,7 +40,7 @@ namespace UdemyNLayerProject.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _productService.AddAsync(_mapper.Map<Product>(productDto));
+                await _productApiService.AddProducts(productDto);
                 return RedirectToAction(nameof(Index));
             }
             return View(productDto);
@@ -63,15 +54,15 @@ namespace UdemyNLayerProject.Web.Controllers
                 return NotFound();
             }
 
-            var product = await _productService.GetWithCategoryByIdAsync((int)id);
+            var product = await _productApiService.GetProduct((int)id);
 
-            ViewData["CategoryId"] = new SelectList(_mapper.Map<IEnumerable<CategoryDto>>(await _categoryService.GetAllAsync()), "Id", "Name", product.CategoryId);
+            ViewData["CategoryId"] = new SelectList(await _categoryApiService.GetAllAsync(), "Id", "Name", product.CategoryId);
 
             if (product == null)
             {
                 return NotFound();
             }
-            return View(_mapper.Map<ProductDto>(product));
+            return View(product);
         }
 
         // POST: Products/Edit/5
@@ -88,8 +79,18 @@ namespace UdemyNLayerProject.Web.Controllers
 
             if (ModelState.IsValid)
             {
-
-                _productService.Update(_mapper.Map<Product>(productDto));
+                var uploadedProduct = await _productApiService.GetProduct(id);
+                uploadedProduct.Name = productDto.Name;
+                uploadedProduct.Stock = productDto.Stock;
+                if (productDto.Price != 0)
+                {
+                    uploadedProduct.Price = productDto.Price;
+                }
+                if (productDto.CategoryId != 0)
+                {
+                    uploadedProduct.CategoryId = productDto.CategoryId;
+                }
+                await _productApiService.UpdateProducts(id, uploadedProduct);
                 return RedirectToAction(nameof(Index));
             }
 
@@ -104,13 +105,13 @@ namespace UdemyNLayerProject.Web.Controllers
                 return NotFound();
             }
 
-            var product = await _productService.GetWithCategoryByIdAsync((int)id);
+            var product = await _productApiService.GetProduct((int)id);
             if (product == null)
             {
                 return NotFound();
             }
 
-            return View(_mapper.Map<ProductDto>(product));
+            return View(product);
         }
 
         // POST: Products/Delete/5
@@ -118,8 +119,7 @@ namespace UdemyNLayerProject.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var product = await _productService.SingleOrDefaultAsync(i => i.Id == id);
-            _productService.Remove(product);
+            await _productApiService.DeleteProducts(id);
             return RedirectToAction(nameof(Index));
         }
     }
